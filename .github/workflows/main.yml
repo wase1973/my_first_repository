@@ -6,11 +6,13 @@ on:
             - main
 
 jobs:
+
     job-one:
         runs-on: ubuntu-latest
         steps:
-            - name: step one
-              run: sleep 10 && echo "This is step one"
+            - name: printing variables value of var1
+              run: echo "The value of var1 is ${{ vars.var1 }}" && echo "The value of sec1 secret is ${{ secrets.sec1 }}"
+            # ${{ secrets.nameofsecret }}
             - name: step two
               run: sleep 10 && echo "This is step two"
             - name: step three
